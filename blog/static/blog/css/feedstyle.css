@@ -1,0 +1,349 @@
+.wrapper{
+    overflow: auto;
+    background-color: #E9EBEE;
+}
+
+.feed{
+    width: 80%;
+    margin: 15px auto 15px auto;
+}
+
+.feedprincipal{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 50%;
+    height: auto;
+    background-color: #FFF;
+    word-wrap: break-word;
+    padding-bottom: 30px;
+}
+
+.feedsecundario1{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 23%;
+    height: auto;
+    margin: 0 2% 0 0;
+    background-color: #FFF;
+    word-wrap: break-word;
+}
+
+.feedsecundario2{
+    display: flex;
+    flex-direction: column;
+    float: right;
+    width: 23%;
+    height: auto;
+    background-color: #FFF;
+    word-wrap: break-word;
+}
+
+.piupost{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    padding: 20px 10px 20px 10px;
+    border-bottom: 30px solid #E9EBEE;
+}
+
+.postar{
+    display: flex;
+    flex-direction: row;
+}
+
+#piuform{
+    width: 68%;
+    font-family: "Helvetica", "Arial", sans-serif;
+    resize: none;
+    margin: 0 10px 0 10px;
+    border: none transparent;
+    outline: none;
+    font-size: 1.2em;
+    word-wrap: break-word;
+    max-height: 2000px;
+}
+
+#postbutton{
+    color: #FFF;
+    border: 0px;
+    font-family: "Arial Rounded MT Bold", "Helvetica";
+    height: 40px;
+    border-radius: 50px;
+    padding: 0 17px;
+    margin: auto;
+}
+
+.postbuttondefault{
+    background-color: #FF6464;
+}
+
+.postbuttoninvalid{
+    background-color: #ffcccc;
+}
+
+.postbuttonclicked{
+    background-color: #ff3333;
+}
+
+.title{
+    text-align: center;
+    font-size: 1.7em;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: lighter;
+    margin: 15px;
+}
+
+.linhahorizontal1{
+    border-bottom: 3px solid #D4D4D4;
+    margin: 0 10px 15px;
+}
+
+.profilebox{
+    display: flex;
+    align-items: center;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+    font-family: "Arial", sans-serif;
+    margin-bottom: 5px;
+}
+
+#name2{
+    margin: 0;
+}
+
+.handle{
+    font-family: "Arial", sans-serif;
+    font-size: 0.8em;
+    color: #606060;
+}
+
+#handle2{
+    margin-left: 10px;
+}
+
+#followbutton{
+    margin: 0 4% 0 auto;
+    color: #FF6464;
+    border: solid #FF6464;
+    font-family: "Arial Rounded MT Bold", "Helvetica";
+    font-weight: bold;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #FFF;
+}
+
+.trendingpiu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    
+}
+
+.trendname{
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    word-break: break-word;
+    margin: 0 15px;
+}
+
+.trendnumber{
+    font-family: "Arial", sans-serif;
+    font-size: 0.8em;
+    color: #606060;
+    margin-left: 15px;
+}
+
+.linhahorizontal2{
+    border-bottom: 2px solid #D4D4D4;
+    margin: 0 0 15px;
+}
+
+#linhavermelha{
+    border-bottom-color: #FF6464;
+    margin: -5px 50px 15px 50px;
+}
+
+.post{
+    display: flex;
+    margin: 2% 0 0 1%;
+    padding-bottom: 15px ;
+    box-sizing: border-box;
+}
+
+.identifier{
+    width: 100%;
+    margin: 15px 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#timedot{
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: #606060;
+}
+
+.piu{
+    width: 100%;
+    word-wrap: break-word;
+    font-family: "Helvetica", "Arial", sans-serif;
+    margin: 0 0 15px 0;
+}
+
+.size{
+    width: 80%;
+}
+
+.piuimage{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.footersec{
+    background-color: #E9EBEE;
+    font-family: "Helvetica", "Arial";
+    font-size: 0.7em;
+    padding: 2px 15px;
+    color: #888888;
+}
+
+.contador{
+    margin: auto;
+    font-family: "Helvetica", "Arial";
+    font-size: 0.8em;
+}
+
+.acimade140cont{
+    color: #ff0000;
+}
+
+.abaixode140cont{
+    color: #000000;
+}
+
+.acimade140texto{
+    color: #D3D3D3;
+}
+
+.abaixode140texto{
+    color: #000000;
+}
+
+.aviso{
+    font-family: "helvetica", "arial", sans-serif;
+    font-size: 0.8em;
+    margin: 20px 10px 0 80px;
+    color: #ff0000;
+    align-self: flex-end;
+    height: auto;
+}
+
+.aviso:empty{
+    display: none;
+}
+
+.likesbarra{
+    display: flex;
+    margin: 5px 0 0 0;
+    height: 18px;
+    align-items: center;
+}
+
+.likebuttondefault{
+    background: url(../icons/likedefault.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 25px;
+    height: 25px;
+    margin: 0 15px 0 0;
+    border: none;
+}
+
+.likebuttonactive{
+    background: url(../icons/likeactive.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 25px;
+    height: 25px;
+    margin: 0 15px 0 0;
+    border: none;
+}
+
+.likes{
+    font-family: "Helvetica", "Arial";
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #606060;
+    margin: 0 0 0 -3px;
+}
+
+.closebutton{
+    margin: 0 0 0 auto;
+    background: url(../icons/delete.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.editbutton{
+    margin: 0 -2% 0 auto;
+    background: url(../icons/edit.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.buttons{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+    margin: 0 0 0 auto;
+}
+
+.editbox{
+    width: 95%;
+    height: auto;
+    font-family: "Helvetica", "Arial", sans-serif;
+    resize: none;
+    word-wrap: break-word;
+    min-height: 100px;
+}
+
+.expand{
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #FF6464;
+    justify-content: center;
+}
+
+.expandbutton{
+    background: url(../icons/expand.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 0 0 auto;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
