@@ -18,54 +18,54 @@
             <div class="barranavicone"></div>
             <div class="barranavsearch"><input type="text" placeholder="Search" ID="search"></div>
             <div class="barranavsep">
-                <div class="barranavbotao"><img src="{% static 'blog/icons/home.png' %}" alt="Home" height=100%></div>
+                <a class="barranavbotao" href="{% url 'blog-home' %}"><img src="{% static 'blog/icons/home.png' %}" alt="Home" height=100%></a>
                     <div class="barranavbotao"><img src="{% static 'blog/icons/messages.png' %}" alt="Messages" height=100%></div>
                     <div class="barranavbotao"><img src="{% static 'blog/icons/notifications.png' %}" alt="Notifications" height=100%></div>
-                    <div class="barranavperfil"><img src="{% static 'blog/images/homem.png' %}" height=80% ID="imagemperfil1"></div>
-            </div>
-        </div>   
-    </div>
-    
-    <div class="cover"><img src="{% static 'blog/images/aurora.jpg' %}" ID="coverphoto">
-    </div>
-    <div class="profile">
-        <div class="profilecolumn">
-            <img src="{% static 'blog/images/homem.png' %}" class="profilepic">
-            <div class="description">
-                <div class="name">John Smith</div>
-                <div class="name" ID="handle">@TheGenericMan</div>
-                <br>
-                Just a generic man in a default world. I like food and sleeping.
-                <br><br>
-                <div class="info">
-                    <div class="name" ID="handle"><img src="{% static 'blog/icons/placeholder.png' %}" class="icon"></div>
-                    Volta Redonda, RJ, Brazil
-                </div>
-                <div class="info">
-                    <div class="name" ID="handle"><img src="{% static 'blog/icons/calendar.png' %}" class="icon"></div>
-                    Joined October 2019
-                </div>
-                <div class="info">
-                    <div class="name" ID="handle"><img src="{% static 'blog/icons/globes.png' %}" class="icon"></div>
-                    Born the 1st of January 1981
-                </div>
+                    <a class="barranavperfil" href="{% url 'blog-profile' %}"><img src="{% static 'blog/images/homem.png' %}" height=80% ID="imagemperfil1"></a>
+                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
             </div>
         </div>
-        
-        <div class="profilefeed">
-            <div class="profilebar">
-            <div class="profilebarbutton" ID="marginleft">Pius</div>
-            <div class="linhavertical"></div>
-            <div class="profilebarbutton">Followings</div>
-            <div class="linhavertical"></div>
-            <div class="profilebarbutton">Followers</div>
-            <div class="linhavertical"></div>
-            <div class="profilebarbutton">Favorites</div>
-            <div class="linhavertical"></div>
-            <input type="submit" value="Follow" ID="followbutton">
-            </div>
 
+    </div>
+        <div class="cover"><img src="{% static 'blog/images/aurora.jpg' %}" ID="coverphoto">
+        </div>
+        <div class="profile">
+            <div class="profilecolumn">
+                <img src="{{ user.profile.image.url }}" class="profilepic">
+                <div class="description">
+                    <div class="name">{{ user.profile.firstandlastname }}</div>
+                    <div class="name" ID="handle">@{{ user.user }}</div>
+                    <br>
+                    Just a generic man in a default world. I like food and sleeping.
+                    <br><br>
+                    <div class="info">
+                        <div class="name" ID="handle"><img src="{% static 'blog/icons/placeholder.png' %}" class="icon"></div>
+                        {{ user.profile.livingplace }}
+                    </div>
+                    <div class="info">
+                        <div class="name" ID="handle"><img src="{% static 'blog/icons/calendar.png' %}" class="icon"></div>
+                        {{ user.profile.joinedday }}
+                    </div>
+                    <div class="info">
+                        <div class="name" ID="handle"><img src="{% static 'blog/icons/globes.png' %}" class="icon"></div>
+                        {{ user.profile.birthday }}
+                    </div>
+                </div>
+            </div>
             
+            <div class="profilefeed">
+                <div class="profilebar">
+                <div class="profilebarbutton" ID="marginleft">Pius</div>
+                <div class="linhavertical"></div>
+                <div class="profilebarbutton">Followings</div>
+                <div class="linhavertical"></div>
+                <div class="profilebarbutton">Followers</div>
+                <div class="linhavertical"></div>
+                <div class="profilebarbutton">Favorites</div>
+                <div class="linhavertical"></div>
+                <input type="submit" value="Follow" ID="followbutton">
+                </div>
+<!--
             <div class="postao">
                 <div class="post">
                     <img src="{% static 'blog/images/homem.png' %}" height = 50px ID="imagemperfil2">
@@ -121,7 +121,7 @@
                 <img src="{% static 'blog/images/homem.png' %}" height = 50px ID="imagemperfil2">
                 <div class="size">
                 <div class="identifier">
-                    <div class="name1" ID="name2">John Smith</div>
+                    <div class="name1" ID="name2">User.name</div>
                     <div class="handle1" ID="handle2">@TheGenericMan</div>
                     <div class="handle1" ID="timedot" >·</div>
                     <div class="handle1">Oct 15</div>
@@ -140,9 +140,7 @@
                 </div>
             </div>
             </div>
-
-
-
+-->
             
     </div>
         </div>

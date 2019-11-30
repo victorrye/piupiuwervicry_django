@@ -20,10 +20,11 @@
                 <div class="barranavicone"></div>
                 <div class="barranavsearch"><input type="text" placeholder="Search" ID="search"></div>
                 <div class="barranavsep">
-                    <div class="barranavbotao"><img src="{% static 'blog/icons/home.png' %}" alt="Home" height=100%></div>
+                    <a class="barranavbotao" href="{% url 'blog-home' %}"><img src="{% static 'blog/icons/home.png' %}" alt="Home" height=100%></a>
                     <div class="barranavbotao"><img src="{% static 'blog/icons/messages.png' %}" alt="Messages" height=100%></div>
                     <div class="barranavbotao"><img src="{% static 'blog/icons/notifications.png' %}" alt="Notifications" height=100%></div>
-                    <div class="barranavperfil"><img src="{% static 'blog/images/homem.png' %}" height=80% ID="imagemperfil1"></div>
+                    <a class="barranavperfil" href="{% url 'blog-profile' %}"><img src="{% static 'blog/images/homem.png' %}" height=80% ID="imagemperfil1"></a>
+                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 </div>
             </div>
         </div>
@@ -60,17 +61,55 @@
             
             <div class="feedprincipal">
                 <div>
-                    <div class="piupost">
-                        <div class="postar">
-                            <img src="{% static 'blog/images/homem.png' %}" height = 50px ID="imagemperfil2">
-                            <textarea placeholder="What's on your mind?" ID="piuform"></textarea>
-                            <button class="postbuttondefault" ID="postbutton">Post</button>
-                            <div class="contador"><span ID="contador-char"></span>/140</div>
-                        </div>
-                        <div class="aviso"></div>
-                    </div> 
+                    
+                        <div class="piupost">
+                            <div class="postar">
+                                {% if user.is_authenticated %}
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <img src="{{ user.profile.image.url }}" height = 50px ID="imagemperfil2">
+                                    <div> {{ form.content }} </div>
+                                    <input type="submit" class="postbuttondefault" ID="postbutton" value="Post">
+                                    <div class="contador"><span ID="contador-char"></span>/140</div>
+                                </form>
+                                {% else %}
+                                    <a class="ml-2" href="{% url 'login' %}">Log in to piu.</a>
+                                {% endif %}
+                                
+                            </div>
+                            <div class="aviso"></div>
+                        </div> 
+
                 </div>
                 <div class="piusgerais">
+                    {% for post in posts %}
+                        <div class="postao">
+                                <div class="post">
+                                    <img src="{{ post.image.url }}" height = 50px ID="imagemperfil2">
+                                    <div class="size">
+                                        <div class="identifier">
+                                            <div class="name" ID="name2">{{post.name}}</div>
+                                            <div class="handle" ID="handle2">@{{post.author}}</div>
+                                            <div class="handle" ID="timedot" >·</div>
+                                            <div class="handle">{{ post.date_posted|date:"g:i   j/n/y"}}</div>
+                                            <div class="buttons">
+                                                <button class="editbutton"></button>
+                                                <button class="closebutton"></button>
+                                            </div>
+                                        </div>
+                                        <div class="piu">{{ post.content }}</div>
+                                        <div class="likesbarra">
+                                            <button class="likebuttondefault likebutton"></button>
+                                            <span class="likes">0</span>
+                                            <button class="expandbutton"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="linhahorizontal2" ID="linhavermelha"></div>
+                        </div>
+                    {% endfor %}
+
+                    <!--
                     <div class="postao">
                         <div class="post">
                             <img src="{% static 'blog/images/billgates.jpg' %}" height = 50px ID="imagemperfil2">
@@ -148,6 +187,8 @@
                             </div>
                         </div>
                     </div>
+                    -->
+
                 </div>
                 
             </div>
@@ -187,7 +228,9 @@
     
         <script src="{% static 'blog/js/jquery.js' %}"></script>
         <script src="{% static 'blog/js/piu.js' %}"></script>
+        <!--
         <script src="{% static 'blog/js/getpiu.js' %}"></script>
+        -->
 
     </body>    
     
